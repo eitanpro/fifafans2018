@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-// using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class BoardCreator : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class BoardCreator : MonoBehaviour
 	public float height = 3;
 
 	public GameObject fanObject;
+	public GameObject chairObject;
 	public GameObject stoneObject;
 
 	public Runner camera;
@@ -49,10 +50,13 @@ public class BoardCreator : MonoBehaviour
 					return;
 				}
 
+				GameObject chair = Instantiate(chairObject, new Vector3(xP, yP - 2.5f, -10f + 2 * y), Quaternion.identity) as GameObject;
+				chair.transform.parent = transform;
+				
 				// draw with probability
 				if (Random.Range(0f, 1f) < population)
 				{
-					GameObject fan = Instantiate(fanObject, new Vector3(xP, yP, -1f), Quaternion.identity) as GameObject;
+					GameObject fan = Instantiate(fanObject, new Vector3(xP, yP, -11f + 2 * y), Quaternion.identity) as GameObject;
 					fan.transform.parent = transform;
 
 					var code = fan.GetComponent<FanControllerObj>();
