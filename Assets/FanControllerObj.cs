@@ -10,9 +10,14 @@ public class FanControllerObj : MonoBehaviour {
 	void OnMouseDown()
 	{
 		//if (boardCreator.IsRunning ()) {
-			isCheering = true;
-			this.GetComponent<Animator> ().SetBool ("isCheering", true);
+			Cheer();
 		//}
+	}
+
+	public void Cheer()
+	{
+		isCheering = true;
+		this.GetComponent<Animator> ().SetBool ("isCheering", true);
 	}
 
 	void OnBecameInvisible ()
