@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class BoardCreator : MonoBehaviour
 {
@@ -104,7 +104,8 @@ public class BoardCreator : MonoBehaviour
 		// TODO save game
 
 		// TODO reset scene
-		//UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		camera.ResetGame ();
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 	
 	private void Draw ()
