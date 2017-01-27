@@ -16,6 +16,10 @@ public class FanControllerObj : MonoBehaviour {
 
 	public void Cheer()
 	{
+		if (!isCheering)
+		{
+			board.AddScore();
+		}
 		isCheering = true;
 		this.GetComponent<Animator> ().SetBool ("isCheering", true);
 	}

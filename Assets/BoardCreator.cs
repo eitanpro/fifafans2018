@@ -22,6 +22,8 @@ public class BoardCreator : MonoBehaviour
 
 	private bool isRunning;
 
+	private int score = 0;
+
 	int interval = 3; 
 	float nextTime = 0;
 
@@ -35,7 +37,15 @@ public class BoardCreator : MonoBehaviour
 
 	public float population = 0.1f;
 
-	private int score = 0;
+	public void AddScore()
+	{
+		this.score += 1;
+	}
+
+	void OnGUI()
+	{
+		GUI.Label (new Rect(Screen.width /2, 10, 50, 50),"Score: " + this.score);
+	}
 
 	private void DrawFanWithProbability (float widthX) // The old way
 	{
